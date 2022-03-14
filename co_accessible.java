@@ -14,29 +14,41 @@ import datastructure.HashSet;
 
 public class co_accessible{
     public static void main(String[] args) {
-		genRandomAcc(10, 1.0, 0.3, 2);
-        // if (args.length<5){
-        //     System.out.println("A generator of co-accessible model.");
-		// 	System.out.println("Usage: java -jar co_accessible.jar n transDen finDen AlphaSize filename");
-		// 	System.out.println("n = size, number of states.");
-		// 	System.out.println("transDen=transition density, typically between 1.1 and 4.5");
-		// 	System.out.println("finDen=acceptance density, must be between 0 and 1.0, e.g., 0.5");
-		// 	System.out.println("AlphaSize =number of symbols, must be an integer >=1");
-		// 	System.out.println("filename=The filename (without extension) where the automaton is stored.");
-		// 	System.out.println("Output: filename.ba");
-		// 	System.out.println("Example: java -jar co_accessible.jar 100 1.9 0.8 2 testAcc");
-		// }else{
-		// 	int n=Integer.parseInt(args[0]);
-		// 	float transDen=Float.parseFloat(args[1]);
-		// 	float finDen=Float.parseFloat(args[2]);
-		// 	int AlphaSize = Integer.parseInt(args[3]);
-		// 	String name=args[4];
-		// 	FiniteAutomaton ba=genRandomAcc(n,transDen,finDen,AlphaSize);
-		// 	ba.saveAutomaton(name+".ba");
+// 	genRandomAcc(10, 1.0, 0.3, 2);
+        if (args.length<5){
+            System.out.println("A generator of co-accessible model.");
+			System.out.println("Usage: java -jar co_accessible.jar n transDen finDen AlphaSize filename");
+			System.out.println("n = size, number of states.");
+			System.out.println("transDen=transition density, typically between 1.1 and 4.5");
+			System.out.println("finDen=acceptance density, must be between 0 and 1.0, e.g., 0.5");
+			System.out.println("AlphaSize =number of symbols, must be an integer >=1");
+			System.out.println("filename=The filename (without extension) where the automaton is stored.");
+			System.out.println("Output: filename.ba");
+			System.out.println("Example: java -jar co_accessible.jar 100 1.9 0.8 2 testAcc");
+		}else{
+			int n=Integer.parseInt(args[0]);
+			float transDen=Float.parseFloat(args[1]);
+			float finDen=Float.parseFloat(args[2]);
+			int AlphaSize = Integer.parseInt(args[3]);
+			String name=args[4];
+			FiniteAutomaton ba=genRandomAcc(n,transDen,finDen,AlphaSize);
+			ba.saveAutomaton(name+".ba");
 			
-        // }
+        }
 		
     }
+	
+	
+	/**
+	 * Generate automata using co-accessble approach
+	 * 
+	 * @param n
+	 * @param transDen
+	 * @param finDen
+	 * @param AlphaSize
+	 * 
+	 * @return a random finite automata
+	 */
 
 	public static FiniteAutomaton genRandomAcc(int n, double transDen, double finDen, int AlphaSize){
 
